@@ -22,10 +22,10 @@ from utils.torch_utils import select_device, smart_inference_mode
 
 @smart_inference_mode()
 def run(
-        weights=ROOT / 'C:/Users/tosun/Downloads/yolov5-master/runs/train/sonuclar/sonuclardemo/weights/best.pt',  # model path or triton URL
-        source=ROOT / 'C:/Users/tosun/Downloads/yolov5-master/test_verilerim',  # file/dir/URL/glob/screen/0(webcam)
+        weights=ROOT / 'C:/Users/.../yolov5-master/runs/train/sonuclar/sonuclardemo/weights/best.pt',  # model path or triton URL
+        source=ROOT / 'C:/Users/.../yolov5-master/test_verilerim',  # file/dir/URL/glob/screen/0(webcam)
         #source=0, #webcam
-        data=ROOT / 'C:/Users/tosun/Downloads/yolov5-master/data.yaml',  # dataset.yaml path
+        data=ROOT / 'C:/Users/.../yolov5-master/data.yaml',  # dataset.yaml path
         imgsz=(288, 288),  # inference size (height, width)
         conf_thres=0.25,  # confidence threshold
         iou_thres=0.45,  # NMS IOU threshold
@@ -41,7 +41,7 @@ def run(
         augment=False,  # augmented inference
         visualize=False,  # visualize features
         update=False,  # update all models
-        project=ROOT / ' C:/Users/tosun/Downloads/yolov5-master/runs/detect',  # save results to project/name
+        project=ROOT / ' C:/Users/.../yolov5-master/runs/detect',  # save results to project/name
         name='exp',  # save results to project/name
         exist_ok=False,  # existing project/name ok, do not increment
         line_thickness=3,  # bounding box thickness (pixels)
@@ -145,7 +145,7 @@ def run(
                     if save_img or save_crop or view_img:  # Add bbox to image
                         c = int(cls)  # integer class
 
-                        df = pd.read_excel('C:/Users/tosun/Downloads/yolov5-master/Menu.xlsx')
+                        df = pd.read_excel('C:/Users/.../yolov5-master/Menu.xlsx')
                         fiyat = df["Fiyat"][c]
 
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f} Fiyat: {fiyat}')
@@ -206,12 +206,12 @@ def run(
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default=ROOT /
-                        'C:/Users/tosun/Downloads/yolov5-master/runs/train/sonuclar/sonuclardemo/weights/best.pt',
+                        'C:/Users/.../yolov5-master/runs/train/sonuclar/sonuclardemo/weights/best.pt',
                         help='model path or triton URL')
-    parser.add_argument('--source', type=str, default=ROOT / 'C:/Users/tosun/Downloads/yolov5-master/test_verilerim',
+    parser.add_argument('--source', type=str, default=ROOT / 'C:/Users/.../yolov5-master/test_verilerim',
                         help='file/dir/URL/glob/screen/0(webcam)')
     #parser.add_argument('--source', type=str, default=0, help='file/dir/URL/glob/screen/0(webcam)')
-    parser.add_argument('--data', type=str, default=ROOT / 'C:/Users/tosun/Downloads/yolov5-master/data.yaml',
+    parser.add_argument('--data', type=str, default=ROOT / 'C:/Users/.../yolov5-master/data.yaml',
                         help='(optional) dataset.yaml path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[288], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float, default=0.25, help='confidence threshold')
